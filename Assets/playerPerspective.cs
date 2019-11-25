@@ -8,7 +8,9 @@ public class playerPerspective : MonoBehaviour
 {
     // Start is called before the first frame update
     // public String playerName;
-    public String server = "192.168.0.25";
+    // public String server = "192.168.0.25";
+    // public String server = "ec2-18-212-170-213.compute-1.amazonaws.com";
+    public string server = "18.212.170.213";
     public int port = 50000;
 
     TcpClient tcp_socket;
@@ -24,7 +26,12 @@ public class playerPerspective : MonoBehaviour
 
 
     void Awake(){
-        tcp_socket = new TcpClient(server, port);
+        try{
+            tcp_socket = new TcpClient(server, port);
+
+        }catch(SocketException socketException){
+            Debug.Log("Erreur !" + socketException);
+        }
         net_stream = tcp_socket.GetStream();
         socket_reader = new StreamReader(net_stream);
         socket_writer = new StreamWriter(net_stream);
@@ -107,11 +114,6 @@ public class playerPerspective : MonoBehaviour
         {
         	// Do something with the received data,
             Debug.Log("received network data ! Lenght:" + received_data.Length.ToString());
-            Debug.Log(received_data[0]);
-            Debug.Log(received_data[1]);
-            Debug.Log(received_data[2]);
-            Debug.Log(received_data[3]);
-            Debug.Log(received_data[4]);
             
             //convert chars to int
             List<int> requestEnd = convertToInt(skipOne(received_data));
