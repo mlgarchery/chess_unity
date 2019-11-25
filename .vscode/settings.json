@@ -1,0 +1,19 @@
+{
+    "files.exclude": { // un moyen de masquer certains fichiers dans l'editeur. est relatif au workspace
+        "**/.git": true,
+        "**/.DS_Store": true,
+        "**/*.meta": true,
+        "**/*.*.meta": true,
+        "**/*.unity": true,
+        // "**/*.unityproj": true,
+        // "**/*.mat": true,
+        // "**/*.fbx": true,
+        "**/*.FBX": true,
+        "**/*.tga": true,
+        "**/*.cubemap": true,
+        // "**/*.prefab": true,
+        "**/Library": true,
+        // "**/ProjectSettings": true,
+        "**/Temp": true
+    }
+}
