@@ -30,18 +30,18 @@ public class pawn : piece
         }
         // diagonal left
         if(x-1>=0 && z+1<8 && pieceAtEnemy[7-(x-1),7-(z+1)]!=-1){
-            // if a anemy piece is here we can move
+            // if a enemy piece is here we can move
             list.Add(new int[]{x-1, z+1});
         }
         // diagonal right
-        if(x+1>=0 && z+1<8 && pieceAtEnemy[7-(x+1),7-(z+1)]!=-1){
-            // if a anemy piece is here we can move
+        if(x+1<8 && z+1<8 && pieceAtEnemy[7-(x+1),7-(z+1)]!=-1){
+            // if a enemy piece is here we can move
             list.Add(new int[]{x+1, z+1});
         }
 
         // double move at start
         if(z==1){
-            if(pieceAt[x,z+2]==-1){
+            if(pieceAt[x,z+2]==-1 && pieceAtEnemy[7-x,7-(z+2)]==-1){
                 list.Add(new int[]{x, z+2});
             }
         }
