@@ -23,7 +23,6 @@ public class queen : piece
         
         foreach (int[] item in bishopCoords){
             rookCoords.Add(item);
-            
         }
 
         return rookCoords;

@@ -46,4 +46,21 @@ public class player : MonoBehaviour
             }
         }
     }
+
+    public void disableScripts(){
+        foreach (Transform pieceTransform in transform)
+        {   
+            piece script = pieceTransform.gameObject.GetComponent<piece>();
+            script.enabled = false;
+        }
+    }
+
+    public void enableScripts(){
+        foreach (Transform pieceTransform in transform)
+        {   
+            piece script = pieceTransform.gameObject.GetComponent<piece>();
+            script.enabled = true;
+        }
+    }
+
 }

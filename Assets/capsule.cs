@@ -29,12 +29,13 @@ public class capsule : MonoBehaviour
         int playerNumber = (int)playerName[6];
 
         // make the request
-        List<int> request = new List<int>{-1,-1,-1,-1,-1};
-        request[0] = playerNumber-48; // its a char
-        request[1] = initialPiecePosition[0];
-        request[2] = initialPiecePosition[1];
-        request[3] = (int)transform.localPosition.x;
-        request[4] = (int)transform.localPosition.z;
+        List<int> request = new List<int>{
+            playerNumber-48, // its a char
+            initialPiecePosition[0],
+            initialPiecePosition[1],
+            (int)transform.localPosition.x,
+            (int)transform.localPosition.z,
+        };
         
         // send it to the dedicated server
         GameObject.Find("PlayerPerspective").GetComponent<playerPerspective>().writeRequest(request);
