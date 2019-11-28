@@ -32,8 +32,6 @@ public class piece : MonoBehaviour
     void OnMouseUp(){
         if(!this.enabled) return; //reason of doing this: When you deactive a script, Update(), FixedUpdate() and OnGUI() are disabled, but most if not all other callbacks still function.
 
-
-        Debug.Log(this.gameObject+ "is clicked");
         playerName = GameObject.Find("PlayerPerspective").GetComponent<playerPerspective>().playerName; 
         // we clean all capsules
         GameObject.Find(playerName).GetComponent<player>().destroyAllPlayerCaspule();
@@ -58,6 +56,5 @@ public class piece : MonoBehaviour
     protected virtual List<int[]> getPossibleMoveCoords(){
         return new List<int[]>{};
     }
-
 
 }

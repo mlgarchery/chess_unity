@@ -51,7 +51,7 @@ public class player : MonoBehaviour
         foreach (Transform pieceTransform in transform)
         {   
             piece script = pieceTransform.gameObject.GetComponent<piece>();
-            script.enabled = false;
+            if(script!=null) script.enabled = false;
         }
     }
 
@@ -59,7 +59,7 @@ public class player : MonoBehaviour
         foreach (Transform pieceTransform in transform)
         {   
             piece script = pieceTransform.gameObject.GetComponent<piece>();
-            script.enabled = true;
+            if(script!=null) script.enabled = true;
         }
     }
 
