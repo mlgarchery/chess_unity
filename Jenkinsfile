@@ -17,7 +17,7 @@ pipeline {
     stage('Windows Echo') {
       steps {
         node(label: 'windows_lorraine') {
-          bat 'tools\\echo.bat'
+          bat(script: 'tools\\build.bat', returnStatus: true, returnStdout: true)
         }
 
       }
