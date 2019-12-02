@@ -6,20 +6,18 @@ pipeline {
 
   }
   stages {
-    stage('Master node Print') {
+    stage('Build (W node)') {
       steps {
-        sh 'java -version'
-        echo 'yooo'
-        pwd(tmp: true)
+        node(label: 'windows_lorraine') {
+          bat(script: 'build.bat', encoding: 'utf-8', returnStatus: true, returnStdout: true)
+        }
+
       }
     }
 
-    stage('Windows Echo') {
+    stage('Test') {
       steps {
-        node(label: 'windows_lorraine') {
-          bat(script: 'build.bat', returnStatus: true, returnStdout: true, encoding: 'utf-8')
-        }
-
+        echo 'test'
       }
     }
 
