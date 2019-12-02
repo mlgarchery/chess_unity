@@ -3,12 +3,12 @@ pipeline {
   stages {
     stage('print') {
       steps {
-        sh 'echo 1'
+        sh 'java -version'
         echo 'yooo'
       }
     }
 
-    stage('') {
+    stage('error') {
       steps {
         bat(script: 'echo.bat', returnStdout: true)
       }
