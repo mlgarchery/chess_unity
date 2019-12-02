@@ -4,6 +4,7 @@ pipeline {
     stage('error') {
       steps {
         sh 'echo 1'
+        echo 'yooo'
       }
     }
 
