@@ -6,16 +6,19 @@ pipeline {
 
   }
   stages {
-    stage('print') {
+    stage('Master node Print') {
       steps {
         sh 'java -version'
         echo 'yooo'
       }
     }
 
-    stage('error') {
+    stage('Windows Echo') {
       steps {
-        bat(script: 'tools\\echo.bat', returnStdout: true)
+        node(label: 'windows_lorraine') {
+          bat 'tools\\echo.bat'
+        }
+
       }
     }
 
