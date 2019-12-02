@@ -1,10 +1,16 @@
 pipeline {
   agent any
   stages {
-    stage('error') {
+    stage('print') {
       steps {
         sh 'echo 1'
         echo 'yooo'
+      }
+    }
+
+    stage('') {
+      steps {
+        bat(script: 'echo.bat', returnStdout: true)
       }
     }
 
