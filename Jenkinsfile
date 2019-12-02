@@ -10,7 +10,7 @@ pipeline {
 
     stage('error') {
       steps {
-        bat(script: 'echo.bat', returnStdout: true)
+        bat(script: 'tools\\echo.bat', returnStdout: true)
       }
     }
 
