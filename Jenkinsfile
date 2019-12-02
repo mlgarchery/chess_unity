@@ -10,6 +10,7 @@ pipeline {
       steps {
         sh 'java -version'
         echo 'yooo'
+        pwd(tmp: true)
       }
     }
 
