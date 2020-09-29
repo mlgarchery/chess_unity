@@ -1,4 +1,11 @@
 # Unity Chess Client
 
+launch the chess server first
 
-launch the chess server (see repo) first
+## Requirements
+
+see requirements.txt
+
+## Advice
+
+Add an env variable UNITYPATH with the path to your Unity.exe
