@@ -1,0 +1,1 @@
+dart2native src/server.dart -o bin/server.exe
