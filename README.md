@@ -8,4 +8,4 @@ see requirements.txt
 
 ## Advice
 
-pAnd an env variable UNITYPATH with the path to your Unity.exe
+Add an env variable UNITYPATH with the path to your Unity.exe
