@@ -1,7 +1,7 @@
 # Simple Unity Chess Client and its server
 
-Some rules are not implemented (roc, En passant for example). I made this to learn Unity, once I got the game running I stopped there to moved on another project. But why I may implement it fully later, why not.
-launch the chess server first (Instructions in the directory server/)
+Some rules are not implemented (roc, En passant for example). I made this to learn Unity earlier this year (2020), once I got the game running I stopped there and moved on another project. But why I may implement it fully later, why not.
+Launch the chess server first (Instructions in the directory server/)
 
 ## Requirements
 
