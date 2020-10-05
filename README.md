@@ -10,7 +10,7 @@ see requirements.txt
 ## Building the Game
 
 - Add an env variable UNITYPATH with the path to your Unity.exe.
-- launch build_client.exe
+- launch build_client.bat
 - the game executable is now at builds/chess.exe
 
 
