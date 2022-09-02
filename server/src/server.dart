@@ -2,7 +2,6 @@ import 'dart:io';
 import 'dart:convert';
 import 'dart:typed_data';
 
-ServerSocket server;
 AsciiDecoder asciiDecoder = AsciiDecoder(allowInvalid: false); // not ascii bytes cause an error
 // asciiDecoder.bind(clients[0]) // return a decoded Stream,  on which we apply forEach()
 // ..forEach(handleMessage(0));
@@ -24,7 +23,7 @@ int playerTurn = 0; // player 1 starts the game
 
 
 void main(List<String> args) {
-  String address = '192.168.0.25'; int port = 50000;
+  String address = '192.168.122.1'; int port = 50000;
 
   try {
     address = args[0]; // if null, assign this value
@@ -45,8 +44,7 @@ void main(List<String> args) {
   
   ServerSocket.bind(address, port)
   .then((ServerSocket socket) {
-      server = socket;
-      server.listen((Socket client) {
+      socket.listen((Socket client) {
         handleConnection(client);
       });
   });
@@ -82,15 +80,15 @@ void handleConnection(Socket client){
   if(clients.length==2){
     //start the game
     gameStarted = true;
-    // clients[0].write("game starts!\n");
-    // clients[1].write("game starts!\n");
+    clients[0].write("game starts!\n");
+    clients[1].write("game starts!\n");
   }
 }
 
 
 bool checkFormat(){ return false;} // for the .where() part
 
-Function handleMessage(client_number){ // element is a ascii string (data sent over the network by the client) - Uint8List element
+dynamic handleMessage(int client_number){ // element is a ascii string (data sent over the network by the client) - Uint8List element
   return (element){
     nbMessages[client_number]++;
     print("client ${client_number + 1}, $element num: ${nbMessages[client_number]}\n");
